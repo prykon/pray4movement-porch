@@ -5,9 +5,17 @@
  */
 if ( is_admin() ){
     add_action( 'admin_menu', 'p4m_admin_menu' );
+    add_filter( 'dt_remove_menu_pages', 'p4m_add_media_tab', 10, 1 );
+
+    function p4m_add_media_tab( $list ) {
+        if ( isset( $list['media'] ) ) {
+            unset( $list['media'] );
+        }
+        return $list;
+    }
 
     function p4m_admin_menu() {
-        add_menu_page( 'Porch', 'Porch', 'read', 'landing_page', 'p4m_landing_admin_page', 'dashicons-admin-generic', 70 );
+        add_menu_page( 'Front Porch', 'Front Porch', 'manage_dt', 'landing_page', 'p4m_landing_admin_page', 'dashicons-admin-generic', 70 );
     }
 
     function p4m_landing_admin_page(){
