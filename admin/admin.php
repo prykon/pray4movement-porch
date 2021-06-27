@@ -13,6 +13,27 @@ if ( is_admin() ){
         }
         return $list;
     }
+    function p4m_add_media_page_warning() {
+        if ( '/wp-admin/upload.php' === $_SERVER['REQUEST_URI'] ) {
+            ?>
+            <div class="notice notice-warning is-dismissible">
+                <p>SECURITY WARNING: <BR>ALL IMAGES AND MEDIA FILES ADDED HERE ARE PUBLICLY ACCESSIBLE TO THE INTERNET. <BR>DO NOT STORE SENSITIVE FILES!</p>
+            </div>
+            <?php
+        }
+    }
+    p4m_add_media_page_warning();
+    function p4m_add_additional_mime_types($mime_types){
+        $mime_types['svg'] = 'image/svg+xml'; //Adding svg extension
+        $mime_types['psd'] = 'image/vnd.adobe.photoshop'; //Adding photoshop files
+        $mime_types['pdf'] = 'application/pdf'; //Adding photoshop files
+        $mime_types['docx'] = 'application/vnd.openxmlformats-'; //Adding photoshop files
+        $mime_types['doc'] = 'application/msword'; //Adding photoshop files
+        $mime_types['csv'] = 'text/csv'; //Adding photoshop files
+        $mime_types['zip'] = 'application/zip'; //Adding photoshop files
+        return $mime_types;
+    }
+    add_filter('upload_mimes', 'p4m_add_additional_mime_types', 1, 1);
 
     function p4m_admin_menu() {
         add_menu_page( 'Front Porch', 'Front Porch', 'manage_dt', 'landing_page', 'p4m_landing_admin_page', 'dashicons-admin-generic', 70 );
