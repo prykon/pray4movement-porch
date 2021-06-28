@@ -389,39 +389,39 @@ $content = get_option('landing_content');
         <div class="col-full">
             <h3 class="subhead subhead--light">Join Us</h3>
             <h1 class="display-1 display-1--light">(1) Get our email prayer guide</h1>
-            <div class="contact-subscribe">
-                <!-- Begin Mailchimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                    #mc_embed_signup_scroll { color:white;}
-                    #mc_embed_signup_scroll h2 { color:white;}
-                    .mc-field-group label { color:white;}
-                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
-                <div id="mc_embed_signup" >
-                    <form action="<?php echo esc_html( $content['mailchimp_form_url'] ?? '' ) ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="" style="padding-left:0;margin-left:0;">
-                        <div id="mc_embed_signup_scroll" >
-                            <div class="mc-field-group" style="padding-bottom:0;">
-                                <label for="mce-EMAIL">Email Address </label>
-                                <input type="email" value="" name="EMAIL" class="required email" style="background:#fff; width: 50%;" id="mce-EMAIL">
-                            </div>
-                            <div class="mc-field-group" style="padding-bottom:0;">
-                                <label for="mce-FNAME">First Name </label>
-                                <input type="text" value="" name="FNAME" class="required" style="background:#fff; width: 50%;" id="mce-FNAME">
-                            </div>
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="<?php echo esc_html( $content['mailchimp_form_hidden_id'] ?? '' ) ?>" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                        </div>
-                    </form>
-                </div>
-                <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='zip';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                <!--End mc_embed_signup-->
-            </div> <!-- end contact-subscribe -->
+
+            <?php if( isset( $content['contact_form'] ) && ! empty( $content['contact_form'] ) ) : ?>
+                <?php echo $content['contact_form']; ?>
+            <?php else : ?>
+                <form id="newsletter-form" action="">
+                    <div id="section-name" class="section">
+                        <label for="name" class="input-label label-name">First Name *
+                            <input type="text" id="newsletter-fname" name="name" class="input-text input-name" value="" required="required" ></label>
+                        <span id="name-error" class="form-error">You're first name is required.</span>
+                    </div>
+
+                    <div id="section-name" class="section">
+                        <label for="name" class="input-label label-name">Last Name *
+                            <input type="text" id="newsletter-lname" name="lname" class="input-text input-name" value="" required="required" ></label>
+                        <span id="lname-error" class="form-error">You're last name is required.</span>
+                    </div>
+
+                    <div id="section-email" class="section">
+                        <label for="email" class="input-label label-email">Email *
+                            <input type="email" id="newsletter-email" name="email" class="input-text input-email" value="" >
+                            <input type="email" id="newsletter-e2" name="email2" class="input-text email" value="" required="required" >
+                        </label>
+                        <span id="email-error" class="form-error">You're email is required.</span>
+                    </div>
+
+                    <div class="section" id="submit-button-container">
+                        <span style="color:red" class="form-submit-error"></span>
+                        <button type="button" class="submit-button ignore" id="submit-button-newsletter" disabled>Submit</button> <span class="loading-spinner"></span>
+                    </div>
+
+                </form>
+            <?php endif; ?>
+
         </div>
     </div> <!-- end section-header -->
 
@@ -449,135 +449,44 @@ $content = get_option('landing_content');
 
     <div class="row section-header" data-aos="fade-up">
         <div class="col-full">
+
             <h1 class="display-1 display-1--light">(3) Contact Us</h1>
 
             <form id="contact-form" action="">
 
-                <input type="hidden" id="ip_address" name="ip_address" value="<?php echo DT_Mapbox_API::get_real_ip_address(); ?>">
-
                 <div id="section-name" class="section">
-                    <label for="name" class="input-label label-name">Name
-                    <input type="text" id="name" name="name" class="input-text input-name" value="" required="" ></label>
-                    <span id="name-error" class="form-error">You're name is required.</span>
-                </div>
-
-                <div id="section-phone" class="section">
-                    <label for="phone" class="input-label">Phone
-                    <input type="tel" id="phone" name="phone" class="input-text input-phone" value="" required=""></label>
-                    <span id="phone-error" class="form-error">You're phone is required.</span>
+                    <label for="name" class="input-label label-name">Name *
+                    <input type="text" id="contact-name" name="name" class="input-text input-name" value="" required="required" ></label>
+                    <span id="contact-name-error" class="form-error">You're name is required.</span>
                 </div>
 
                 <div id="section-email" class="section">
-                    <label for="email" class="input-label label-email">Email
-                    <input type="email" id="email2" name="email2" class="input-text email" value="">
-                    <input type="email" id="email" name="email" class="input-text input-email" value="" required=""></label>
-                    <span id="email-error" class="form-error">You're email is required.</span>
+                    <label for="email" class="input-label label-email">Email *
+                        <input type="email" id="contact-email" name="email" class="input-text input-email" value="" >
+                        <input type="email" id="contact-e2" name="email2" class="input-text email" value="" required="required" >
+                    </label>
+                    <span id="contact-email-error" class="form-error">You're email is required.</span>
+                </div>
+
+                <div id="section-phone" class="section">
+                    <label for="phone" class="input-label">Phone *
+                    <input type="tel" id="contact-phone" name="phone" class="input-text input-phone" value="" required="required" ></label>
+                    <span id="contact-phone-error" class="form-error">You're phone is required.</span>
+                </div>
+
+                <div id="section-permission" class="section">
+                    <label for="phone" class="input-label">Comment
+                        <textarea id="contact-comment" name="comment" class="input-text" value=""></textarea>
+                    </label>
                 </div>
 
                 <div class="section" id="submit-button-container">
                     <span style="color:red" class="form-submit-error"></span>
-                    <button type="button" class="submit-button ignore" id="submit-button" disabled>Submit</button> <span class="loading-spinner"></span>
+                    <button type="button" class="submit-button ignore" id="submit-button-contact" disabled>Submit</button> <span class="loading-spinner"></span>
                 </div>
 
             </form>
 
-            <script>
-                jQuery(document).ready(function(){
-                    // This is a form delay to discourage robots
-                    let counter = 5;
-                    let myInterval = setInterval(function () {
-                        let button = jQuery('#submit-button')
-
-                        button.html( 'Available in ' + counter)
-                        --counter;
-
-                        if ( counter === 0 ) {
-                            clearInterval(myInterval);
-                            button.html( 'Submit' ).prop('disabled', false)
-                        }
-
-                    }, 1000);
-
-                    let submit_button = jQuery('#submit-button')
-                    submit_button.on('click', function(){
-                        let spinner = jQuery('.loading-spinner')
-                        spinner.addClass('active')
-                        submit_button.prop('disabled', true)
-
-                        let honey = jQuery('#email').val()
-                        if ( honey ) {
-                            submit_button.html('Shame, shame, shame. We know your name ... ROBOT!').prop('disabled', true )
-                            spinner.removeClass('active')
-                            return;
-                        }
-
-                        let name_input = jQuery('#name')
-                        let name = name_input.val()
-                        if ( ! name ) {
-                            jQuery('#name-error').show()
-                            submit_button.removeClass('loading')
-                            name_input.focus(function(){
-                                jQuery('#name-error').hide()
-                            })
-                            submit_button.prop('disabled', false)
-                            spinner.removeClass('active')
-                            return;
-                        }
-
-                        let email_input = jQuery('#e2')
-                        let email = email_input.val()
-                        if ( ! email ) {
-                            jQuery('#email-error').show()
-                            submit_button.removeClass('loading')
-                            email_input.focus(function(){
-                                jQuery('#email-error').hide()
-                            })
-                            submit_button.prop('disabled', false)
-                            spinner.removeClass('active')
-                            return;
-                        }
-
-                        let phone_input = jQuery('#phone')
-                        let phone = phone_input.val()
-                        if ( ! phone ) {
-                            jQuery('#phone-error').show()
-                            submit_button.removeClass('loading')
-                            email_input.focus(function(){
-                                jQuery('#phone-error').hide()
-                            })
-                            submit_button.prop('disabled', false)
-                            spinner.removeClass('active')
-                            return;
-                        }
-
-                        let form_data = {
-                            name: name,
-                            email: email,
-                            phone: phone
-                        }
-
-                        jQuery.ajax({
-                            type: "POST",
-                            data: JSON.stringify({ action: 'followup', parts: jsObject.parts, data: form_data }),
-                            contentType: "application/json; charset=utf-8",
-                            dataType: "json",
-                            url: jsObject.root + jsObject.parts.root + '/v1/' + jsObject.parts.type,
-                            beforeSend: function (xhr) {
-                                xhr.setRequestHeader('X-WP-Nonce', jsObject.nonce )
-                            }
-                        })
-                            .done(function(response){
-                                jQuery('.loading-spinner').removeClass('active')
-                                console.log(response)
-
-                            })
-                            .fail(function(e) {
-                                console.log(e)
-                                jQuery('#error').html(e)
-                            })
-                    })
-                })
-            </script>
         </div>
     </div> <!-- end section-header -->
 
@@ -585,8 +494,192 @@ $content = get_option('landing_content');
 
     </div> <!-- end row -->
 </section>
+<script>
+    jQuery(document).ready(function(){
+        // This is a form delay to discourage robots
+        let counter = 5;
+        let myInterval = setInterval(function () {
+            let button = jQuery('.submit-button')
+
+            button.html( 'Available in ' + counter)
+            --counter;
+
+            if ( counter === 0 ) {
+                clearInterval(myInterval);
+                button.html( 'Submit' ).prop('disabled', false)
+            }
+
+        }, 1000);
+
+        /* NEWSLETTER */
+        let submit_button_newsletter = jQuery('#submit-button-newsletter')
+        submit_button_newsletter.on('click', function(){
+            let spinner = jQuery('.loading-spinner')
+            spinner.addClass('active')
+            submit_button_newsletter.prop('disabled', true)
+
+            let honey = jQuery('#email').val()
+            if ( honey ) {
+                submit_button_newsletter.html('Shame, shame, shame. We know your name ... ROBOT!').prop('disabled', true )
+                spinner.removeClass('active')
+                return;
+            }
+
+            let fname_input = jQuery('#newsletter-fname')
+            let fname = fname_input.val()
+            if ( ! fname ) {
+                jQuery('#name-error').show()
+                submit_button_newsletter.removeClass('loading')
+                fname_input.focus(function(){
+                    jQuery('#name-error').hide()
+                })
+                submit_button_newsletter.prop('disabled', false)
+                spinner.removeClass('active')
+                return;
+            }
+
+            let lname_input = jQuery('#newsletter-lname')
+            let lname = fname_input.val()
+            if ( ! fname ) {
+                jQuery('#name-error').show()
+                submit_button_newsletter.removeClass('loading')
+                lname_input.focus(function(){
+                    jQuery('#name-error').hide()
+                })
+                submit_button_newsletter.prop('disabled', false)
+                spinner.removeClass('active')
+                return;
+            }
+
+            let email_input = jQuery('#newsletter-e2')
+            let email = email_input.val()
+            if ( ! email ) {
+                jQuery('#email-error').show()
+                submit_button_newsletter.removeClass('loading')
+                email_input.focus(function(){
+                    jQuery('#email-error').hide()
+                })
+                submit_button_newsletter.prop('disabled', false)
+                spinner.removeClass('active')
+                return;
+            }
+
+            let form_data = {
+                fname: fname,
+                lname: lname,
+                email: email,
+                permission: permission
+            }
+
+            jQuery.ajax({
+                type: "POST",
+                data: JSON.stringify({ action: 'newsletter', parts: jsObject.parts, data: form_data }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                url: jsObject.root + jsObject.parts.root + '/v1/' + jsObject.parts.type,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-WP-Nonce', jsObject.nonce )
+                }
+            })
+                .done(function(response){
+                    jQuery('.loading-spinner').removeClass('active')
+                    console.log(response)
+
+                })
+                .fail(function(e) {
+                    console.log(e)
+                    jQuery('#error').html(e)
+                })
+        })
+
+        /* CONTACT FORM */
+        let submit_button_contact = jQuery('#submit-button-contact')
+        submit_button_contact.on('click', function(){
+            let spinner = jQuery('.loading-spinner')
+            spinner.addClass('active')
+            submit_button_contact.prop('disabled', true)
+
+            let honey = jQuery('#contact-email').val()
+            if ( honey ) {
+                submit_button_contact.html('Shame, shame, shame. We know your name ... ROBOT!').prop('disabled', true )
+                spinner.removeClass('active')
+                return;
+            }
+
+            let name_input = jQuery('#contact-name')
+            let name = name_input.val()
+            if ( ! name ) {
+                jQuery('#name-error').show()
+                submit_button_contact.removeClass('loading')
+                name_input.focus(function(){
+                    jQuery('#name-error').hide()
+                })
+                submit_button_contact.prop('disabled', false)
+                spinner.removeClass('active')
+                return;
+            }
+
+            let email_input = jQuery('#contact-e2')
+            let email = email_input.val()
+            if ( ! email ) {
+                jQuery('#email-error').show()
+                submit_button_contact.removeClass('loading')
+                email_input.focus(function(){
+                    jQuery('#email-error').hide()
+                })
+                submit_button_contact.prop('disabled', false)
+                spinner.removeClass('active')
+                return;
+            }
+
+            let phone_input = jQuery('#contact-phone')
+            let phone = phone_input.val()
+            if ( ! phone ) {
+                jQuery('#phone-error').show()
+                submit_button_contact.removeClass('loading')
+                email_input.focus(function(){
+                    jQuery('#phone-error').hide()
+                })
+                submit_button_contact.prop('disabled', false)
+                spinner.removeClass('active')
+                return;
+            }
+
+            let comment = jQuery('#contact-comment').html()
+
+            let form_data = {
+                name: name,
+                email: email,
+                phone: phone,
+                comment: comment
+            }
+
+            jQuery.ajax({
+                type: "POST",
+                data: JSON.stringify({ action: 'followup', parts: jsObject.parts, data: form_data }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                url: jsObject.root + jsObject.parts.root + '/v1/' + jsObject.parts.type,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-WP-Nonce', jsObject.nonce )
+                }
+            })
+                .done(function(response){
+                    jQuery('.loading-spinner').removeClass('active')
+                    console.log(response)
+
+                })
+                .fail(function(e) {
+                    console.log(e)
+                    jQuery('#error').html(e)
+                })
+        })
+
+    })
+</script>
 <style>
-    #email {display:none;}
+    #contact-email {display:none;}
+    #newsletter-email {display:none;}
     .form-error {
         display:none;
     }
@@ -597,6 +690,8 @@ $content = get_option('landing_content');
         color: white;
         display: block;
     }
+
+
 
     input.input-text {
         display: block;
@@ -614,26 +709,22 @@ $content = get_option('landing_content');
         transition: all 0.3s ease-in-out;
     }
 
-    #submit-button {
-        display: inline-block;
+    textarea.input-text {
+        display: block;
+        padding: .5rem;
+        border: 0;
+        background-color: white;
+        outline: none;
+        color: #151515;
         font-family: metropolis-semibold, sans-serif;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3rem;
-        height: 5.4rem;
-        line-height: 5rem;
-        padding: 0 3rem;
-        margin: 0 0.3rem 1.2rem 0;
-        color: #000000;
-        text-decoration: none;
-        text-align: center;
-        white-space: nowrap;
-        cursor: pointer;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        width: 50% !important;
+        max-width: 100%;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        background-color: #c5c5c5;
-        border: 0.2rem solid #c5c5c5;
     }
+
 
     body {
         background-color: rgb(17, 17, 17) !important;
@@ -664,30 +755,8 @@ $content = get_option('landing_content');
     }
     /* end spinner */
 
-
     .section {
         padding-top: 10px;
-    }
-
-    #mc_embed_signup .button {
-        display: inline-block;
-        font-family: metropolis-semibold, sans-serif;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3rem;
-        height: 5.4rem;
-        line-height: 5rem;
-        padding: 0 3rem;
-        margin: 0 0.3rem 1.2rem 0;
-        color: #000000;
-        text-decoration: none;
-        text-align: center;
-        white-space: nowrap;
-        cursor: pointer;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: #c5c5c5;
-        border: 0.2rem solid #c5c5c5;
     }
 </style>
 
