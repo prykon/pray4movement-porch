@@ -31,7 +31,10 @@ $content = get_option('landing_content');
                 <?php if( $content['sample_section'] ?? 'yes' === 'yes' ) : ?>
                     <li><a class="smoothscroll" href="#works" title="works">Samples</a></li>
                 <?php endif; ?>
+
             </ul>
+
+
 
             <p><?php echo esc_html( $content['title'] ?? '' ) ?> serves as a connection point for anyone with a passion to see a disciple-making movement in
                 <?php echo esc_html( $content['location'] ?? '' ) ?>. Join our email prayer guide, follow us on social media, or join us for a
@@ -54,6 +57,15 @@ $content = get_option('landing_content');
                     </li>
                 <?php endif; ?>
             </ul>
+
+            <p>
+                <a class="" href="/login" title="login" style="display: block;
+                    color: #ffffff;
+                    position: relative;
+                    font-size: 1.6rem;">
+                    Login
+                </a>
+            </p>
 
         </div> <!-- end header-nav__content -->
 
@@ -120,6 +132,12 @@ $content = get_option('landing_content');
         <li><a href="<?php echo esc_html( $content['instagram_url'] ?? '' ) ?>" target="_blank" rel="noreferrer noopener">
                 <i class="fab fa-instagram"></i>
                 <span class="home-social-text">Instagram</span>
+            </a>
+        </li>
+        <li>
+            <a href="/login" target="_blank" rel="noreferrer noopener">
+                <i class="fab"></i>
+                <span class="home-social-text">Login</span>
             </a>
         </li>
         <?php endif; ?>
