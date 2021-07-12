@@ -27,7 +27,7 @@ $content = get_option('landing_content');
                 <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
                 <li><a class="smoothscroll" href="#about" title="about">About</a></li>
                 <li><a class="smoothscroll" href="#values" title="our-plan">Values</a></li>
-                <li><a class="smoothscroll" href="#contact" title="contact">Join Us</a></li>
+                <li><a class="smoothscroll" href="#contact" title="contact">Start today!</a></li>
                 <?php if( $content['sample_section'] ?? 'yes' === 'yes' ) : ?>
                     <li><a class="smoothscroll" href="#works" title="works">Samples</a></li>
                 <?php endif; ?>
@@ -36,10 +36,11 @@ $content = get_option('landing_content');
 
 
 
-            <p><?php echo esc_html( $content['title'] ?? '' ) ?> serves as a connection point for anyone with a passion to see a disciple-making movement in
-                <?php echo esc_html( $content['location'] ?? '' ) ?>. Join our email prayer guide, follow us on social media, or join us for a
-                prayer-walk. Above all pray with us to see spiritual life poured out on our state.</p>
-
+            <p>
+                <?php echo esc_html( $content['title'] ?? '' ) ?> is an 100% free math teaching network for anyone that wants to take their knowledge to another level.
+                Join our math classes by email, follow us on social media, or join us for a virtual classroom
+                with other people from <?php echo esc_html( $content['location'] ?? '' ) ?>. See math become a reality in your day to day life.
+            </p>
             <ul class="header-nav__social">
                 <?php if( ! empty( $content['facebook_url'] ?? '') ) : ?>
                     <li>
@@ -90,11 +91,11 @@ $content = get_option('landing_content');
 
         <div class="row home-content__main">
             <h1>
-                Praying for a <br>disciple making movement <br>in <?php echo esc_html( $content['location'] ?? '' ) ?>.
+                Reaching <?php echo esc_html( $content['location'] ?? '' ) ?> with <br>quality education.
             </h1>
 
             <h2 style="color:white;font-family: 'metropolis-light', 'sans-serif';font-size:3.8rem;margin-top:0;"><span style="color:#cc147f;">-</span> #<?php echo esc_html( $content['title'] ?? '' ) ?></h2>
-            <a href="#contact" class="smoothscroll"><button class="">Join Us</button></a>
+            <a href="#contact" class="smoothscroll"><button class="">Start today!</button></a>
 
         </div> <!-- end home-content__main -->
 
@@ -103,15 +104,15 @@ $content = get_option('landing_content');
     <ul class="home-sidelinks">
         <li><a class="smoothscroll" href="#about">About<span>who we are</span></a></li>
         <li><a class="smoothscroll" href="#values">Values<span>what we care about</span></a></li>
-        <li><a class="smoothscroll" href="#contact">Join Us<span>be a part</span></a></li>
+        <li><a class="smoothscroll" href="#contact">Start learning<span>today</span></a></li>
     </ul> <!-- end home-sidelinks -->
 
     <ul class="home-social">
-        <li class="home-social-title">Join Us</li>
+        <li class="home-social-title">Start learning</li>
         <li>
             <a href="#contact" class="smoothscroll">
                 <i class="fab fa-envelope"></i>
-                <span class="home-social-text">Email Guide</span>
+                <span class="home-social-text">Email Math Classes</span>
             </a>
         </li>
         <?php if( ! empty( $content['facebook_url'] ?? '') ) : ?>
@@ -159,15 +160,15 @@ $content = get_option('landing_content');
     <div class="row section-header" data-aos="fade-up">
         <div class="col-full">
             <h3 class="subhead">Who We Are</h3>
-            <h1 class="display-1">#<?php echo esc_html( $content['title'] ?? '' ) ?> serves as a connection point for anyone with a passion to see a disciple making movement in <?php echo esc_html( $content['location'] ?? '' ) ?>.</h1>
+            <h1 class="display-1">#<?php echo esc_html( $content['title'] ?? '' ) ?> brings quality level education to anyone in <?php echo esc_html( $content['location'] ?? 'the World' ) ?> for free.</h1>
         </div>
     </div> <!-- end section-header -->
 
     <div class="row" data-aos="fade-up">
         <div class="col-full">
             <p class="lead">
-                Join our email prayer guide, follow us on social media, or join us for a prayer-walk.
-                Above all, pray with us to see spiritual life poured out on our state.
+                Join our email math classes, follow us on social media, or join us for a free math classes.
+                Above all, learn to solve every day problems with math.
             </p>
         </div>
     </div> <!-- end about-desc -->
@@ -181,11 +182,11 @@ $content = get_option('landing_content');
 
             <div class="col-block process__col" data-item="1" data-aos="fade-up">
                 <div class="process__text">
-                    <h4>Email Prayer Guide</h4>
+                    <h4>Math Classes by Email</h4>
 
                     <p>
-                        We offer a regular prayer guide that includes challenges, quotes, and scripture focusing on <?php echo esc_html( $content['location'] ?? '' ) ?> issues. These serve as a help to focus us and help us pray together.
-                        <a href="#contact">Join our Prayer Guide</a>
+                        We offer regular Math Classes through Email that will get you up to level with high school and even university level subjects. What are you waiting for? Subscribe to our Email Math Classes in <?php echo esc_html( $content['location'] ?? 'your area' ) ?> today!
+                        <a href="#contact">Join our Email Math Classes</a>
                     </p>
                 </div>
             </div>
@@ -194,8 +195,7 @@ $content = get_option('landing_content');
                     <h4>Social Media</h4>
 
                     <p>
-                        Our same email challenges can also be followed on social media. Join our online prayer
-                        warriors.
+                        Get daily math motivation by following us on social media. Join our community of math enthusiasts.
                         <?php if( ! empty( $content['facebook_url'] ?? '') ) : ?>
                         <a href="<?php echo esc_html( $content['facebook_url'] ?? '' ) ?>" target="_blank" rel="noreferrer noopener">Facebook</a>
                         <?php endif; ?>
@@ -211,23 +211,21 @@ $content = get_option('landing_content');
             </div>
             <div class="col-block process__col" data-item="3" data-aos="fade-up">
                 <div class="process__text">
-                    <h4>Prayer Walks</h4>
+                    <h4>One on One Math Tutors</h4>
 
                     <p>
-                        Prayer walking is key. Our faith is intended to be a light on a hill. Getting out and praying
-                        over sections of the city and over the people who are there has born fruit in every nation on
-                        the planet. <?php echo esc_html( $content['location'] ?? '' ) ?> is no different. Check out our
+                        One on one tutoring is key. Reading from a math book or watching a lesson video isn't enough. Math tutoring
+                        in different sections of the city is available thanks to our volunteer teachers. <?php echo esc_html( $content['location'] ?? 'Your neighborhood' ) ?> is no different. Check out our
                         <a href="<?php echo esc_html( $content['facebook_events_url'] ?? '' ) ?>">Facebook Events</a>
-                        page.
+                        page and find out when new classes are available in your area.
                     </p>
                 </div>
             </div>
             <div class="col-block process__col" data-item="4" data-aos="fade-up">
                 <div class="process__text">
-                    <h4>Movement Training</h4>
+                    <h4>Efficient Training</h4>
                     <p>
-                        If you have a small group or sunday school that would like training on prayer walking or
-                        discipleship training on making disciples who multiply, <a href="#contactform">contact us</a>.
+                        We use new teaching methods that will take your math learning to a new level. Every person is different and that's why we tailor math lessons to the way you learn the best. <a href="#contactform">Contact us</a> to learn more.
                     </p>
                 </div>
             </div>
@@ -254,11 +252,11 @@ $content = get_option('landing_content');
         </div>
         <div class="col-block stats__col">
             <div class="stats__count"><?php echo esc_html( $content['stats_trainings'] ?? '0' ) ?></div>
-            <h5>New Trainings Needed</h5>
+            <h5>Tutors Available</h5>
         </div>
         <div class="col-block stats__col">
             <div class="stats__count"><?php echo esc_html( $content['stats_churches'] ?? '0' ) ?></div>
-            <h5>New Churches Needed</h5>
+            <h5>New Schools Needed</h5>
         </div>
 
     </div> <!-- end stats -->
@@ -272,16 +270,16 @@ $content = get_option('landing_content');
     <div class="row section-header" data-aos="fade-up">
         <div class="col-full">
             <h3 class="subhead">What We Care About</h3>
-            <h1 class="display-1">We know that every disciple making movement in history has begun with
-                Extraordinary Prayer.</h1>
+            <h1 class="display-1">We know that every student history has begun with
+                discipline, study, and practice.</h1>
         </div>
     </div> <!-- end section-header -->
 
     <div class="row" data-aos="fade-up">
         <div class="col-full">
             <p class="lead">
-                “You do not have because you do not ask God.” – James 4:2<br>
-                “The story of every great Christian achievement is the history of answered prayer.” – E.M. Bounds
+                “The only way to learn mathematics is to do mathematics.” – Paul Hamos<br>
+                “God used beautiful mathematics in creating the world.” – Paul Dirac
             </p>
         </div>
     </div> <!-- end about-desc -->
@@ -293,9 +291,9 @@ $content = get_option('landing_content');
                 <i class="icon-tv"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Loving</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> loves God, loves people, and helps Christians fulfill the Great Commission by
-                    mobilizing prayer.
+                <h3 class="h4">Studying</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> loves to study, loves practice, and helps students fulfill their potential
+                    bringing math to an understandable level.
                 </p>
             </div>
         </div>
@@ -305,9 +303,8 @@ $content = get_option('landing_content');
                 <i class="icon-group"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Strategic</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> promotes strategic prayer for movement, knowing that ( based upon research )
-                    extraordinary prayer is found at the root of all modern movements.
+                <h3 class="h4">Practice</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> believes practice makes perfect. Without practice, one can never achieve his highest potential.
                 </p>
             </div>
         </div>
@@ -317,9 +314,9 @@ $content = get_option('landing_content');
                 <i class="icon-tv"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Safe</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> will never ask for money or market to you on behalf of others. The resources and
-                    events we may mention will always be for the benefit and connection of the community.
+                <h3 class="h4">Free</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> will never ask for funds or money to their students.you on behalf of others.
+                    This community runs on the donations of generous people that want make mathematical education available to everyone.
                 </p>
             </div>
         </div>
@@ -330,7 +327,8 @@ $content = get_option('landing_content');
             </div>
             <div class="service-text">
                 <h3 class="h4">Open</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> welcomes collaboration of <strong>all</strong> Christians.
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> welcomes collaboration of <strong>all</strong> tutors.
+                    If you love math, we need you!
                 </p>
             </div>
         </div>
@@ -340,9 +338,9 @@ $content = get_option('landing_content');
                 <i class="icon-lego-block"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Multiplying</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> cares that obedient disciples of Jesus Christ make more obedient disciples. Obeying
-                    all that Jesus commanded includes making disciples who make disciples.
+                <h3 class="h4">Exponential Growth</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> wants you to keep the ball rolling.
+                    If math has changed your life, share this link with someone that could use it.
                 </p>
             </div>
         </div>
@@ -352,9 +350,9 @@ $content = get_option('landing_content');
                 <i class="icon-window"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Expectant</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> strives to neither under- nor over-estimate man’s role in disciple multiplication
-                    movements. God declared prayer as the vehicle for seeking and receiving his kingdom in the place we live.
+                <h3 class="h4">Down to Earth</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> knows what it's like to have a teacher that only speaks with abstract examples.
+                    We bring mathematics down to Earth with real-life examples and applied mathematics.
                 </p>
             </div>
         </div>
@@ -365,8 +363,7 @@ $content = get_option('landing_content');
             </div>
             <div class="service-text">
                 <h3 class="h4">Mobilizing</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> asks everyone to not only pray but also to mobilize prayer through relationships
-                    and opportunities God provides.
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> asks everyone to not only study math but also to encourage others to learn as well.
                 </p>
             </div>
         </div>
@@ -376,9 +373,8 @@ $content = get_option('landing_content');
                 <i class="icon-window"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Brief</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> is super brief, usually 1-to-3 lines long. We aim to provoke directed prayer, not
-                    monologue.
+                <h3 class="h4">Simple</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?>  makes learning easy. Never give up, you can do it!
                 </p>
             </div>
         </div>
@@ -388,9 +384,9 @@ $content = get_option('landing_content');
                 <i class="icon-tv"></i>
             </div>
             <div class="service-text">
-                <h3 class="h4">Not Political</h3>
-                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> is not a political agenda, rather an effort for sinners who have found forgiveness
-                    in Christ to share this Good News with others.
+                <h3 class="h4">For the people</h3>
+                <p>#<?php echo esc_html( $content['title'] ?? '' ) ?> is by the people, for the people. We know about the necesitty for math
+                    want to share its importance with others.
                 </p>
             </div>
         </div>
@@ -406,7 +402,7 @@ $content = get_option('landing_content');
     <div class="row section-header" data-aos="fade-up">
         <div class="col-full">
             <h3 class="subhead subhead--light">Join Us</h3>
-            <h1 class="display-1 display-1--light">(1) Get our email prayer guide</h1>
+            <h1 class="display-1 display-1--light">(1) Get our email math classes</h1>
 
             <?php if( isset( $content['contact_form'] ) && ! empty( $content['contact_form'] ) ) : ?>
                 <?php echo $content['contact_form']; ?>
@@ -538,7 +534,7 @@ $content = get_option('landing_content');
 
             let honey = jQuery('#email').val()
             if ( honey ) {
-                submit_button_newsletter.html('Shame, shame, shame. We know your name ... ROBOT!').prop('disabled', true )
+                submit_button_newsletter.html('You can\'t fool me, you... you ROBOT!').prop('disabled', true )
                 spinner.removeClass('active')
                 return;
             }
@@ -619,7 +615,7 @@ $content = get_option('landing_content');
 
             let honey = jQuery('#contact-email').val()
             if ( honey ) {
-                submit_button_contact.html('Shame, shame, shame. We know your name ... ROBOT!').prop('disabled', true )
+                submit_button_contact.html('You can\'t fool me, you... you ROBOT!').prop('disabled', true )
                 spinner.removeClass('active')
                 return;
             }
@@ -708,9 +704,6 @@ $content = get_option('landing_content');
         color: white;
         display: block;
     }
-
-
-
     input.input-text {
         display: block;
         padding: .5rem;
@@ -726,7 +719,6 @@ $content = get_option('landing_content');
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-
     textarea.input-text {
         display: block;
         padding: .5rem;
@@ -742,16 +734,12 @@ $content = get_option('landing_content');
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-
-
     body {
         background-color: rgb(17, 17, 17) !important;
     }
-
     .form-error {
         color: red;
     }
-
     /* begin spinner */
     @keyframes spin {
         0% {
@@ -772,7 +760,6 @@ $content = get_option('landing_content');
         display: inline-block;
     }
     /* end spinner */
-
     .section {
         padding-top: 10px;
     }
@@ -807,7 +794,7 @@ $content = get_option('landing_content');
                             Path to growth
                         </h3>
                         <p class="item-folio__cat">
-                            Movement principles
+                            Mathematical principles
                         </p>
                     </div>
 
@@ -816,7 +803,7 @@ $content = get_option('landing_content');
                     </a>
 
                     <div class="item-folio__caption">
-                        <p>The great challenge that faces spiritual movement is not complexity of thought, but obedient action.</p>
+                        <p>The biggest challenge in the face of personal education is not access to resources but the willingness to practice.</p>
                     </div>
 
                 </div> <!-- end item-folio -->
@@ -826,17 +813,17 @@ $content = get_option('landing_content');
                 <div class="item-folio">
 
                     <div class="item-folio__thumb">
-                        <a href="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-pray.jpg" class="thumb-link" title="Pray" data-size="800x800">
-                            <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/pray.jpg" srcset="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/pray.jpg 1x, <?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-pray.jpg 2x" alt="">
+                        <a href="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-math.jpg" class="thumb-link" title="Math" data-size="800x800">
+                            <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/math.jpg" srcset="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/math.jpg 1x, <?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-math.jpg 2x" alt="">
                         </a>
                     </div>
 
                     <div class="item-folio__text">
                         <h3 class="item-folio__title">
-                            See where the kingdom isn't
+                            See where tutors are needed
                         </h3>
                         <p class="item-folio__cat">
-                            Compassion
+                            Volunteer
                         </p>
                     </div>
 
@@ -845,7 +832,7 @@ $content = get_option('landing_content');
                     </a>
 
                     <span class="item-folio__caption">
-                            <p>Have eyes to see where the kingdom is not yet.</p>
+                            <p>Volunteer in areas were tutors are needed.</p>
                         </span>
 
                 </div> <!-- end item-folio -->
@@ -862,10 +849,10 @@ $content = get_option('landing_content');
 
                     <div class="item-folio__text">
                         <h3 class="item-folio__title">
-                            Heart of Prayer
+                            We love math
                         </h3>
                         <p class="item-folio__cat">
-                            Prayer
+                            Study
                         </p>
                     </div>
 
@@ -874,7 +861,7 @@ $content = get_option('landing_content');
                     </a>
 
                     <span class="item-folio__caption">
-                            <p>Revision what prayer is.</p>
+                            <p>Forget everything you thought you knew about math.</p>
                         </span>
 
                 </div> <!-- end item-folio -->
@@ -891,10 +878,10 @@ $content = get_option('landing_content');
 
                     <div class="item-folio__text">
                         <h3 class="item-folio__title">
-                            The Word has Power
+                            Math knows no barriers
                         </h3>
                         <p class="item-folio__cat">
-                            Scripture
+                            Math books
                         </p>
                     </div>
 
@@ -903,7 +890,7 @@ $content = get_option('landing_content');
                     </a>
 
                     <span class="item-folio__caption">
-                            <p>Pray Continually</p>
+                            <p>Study every day</p>
                         </span>
 
                 </div> <!-- end item-folio -->
@@ -921,10 +908,10 @@ $content = get_option('landing_content');
 
                     <div class="item-folio__text">
                         <h3 class="item-folio__title">
-                            Extraordinary Prayer
+                            Amazing Students
                         </h3>
                         <p class="item-folio__cat">
-                            Prayer
+                            Practice
                         </p>
                     </div>
 
@@ -933,7 +920,7 @@ $content = get_option('landing_content');
                     </a>
 
                     <span class="item-folio__caption">
-                            <p>The primary means of revival that everyone agrees on is extraordinary prayer.</p>
+                            <p>Nobody can deny the usefulness of Mathematics</p>
                         </span>
 
                 </div> <!-- end item-folio -->
@@ -943,17 +930,17 @@ $content = get_option('landing_content');
                 <div class="item-folio">
 
                     <div class="item-folio__thumb">
-                        <a href="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-quote3.jpg" class="thumb-link" title="Shutterbug" data-size="800x800">
+                        <a href="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-quote3.jpg" class="thumb-link" title="" data-size="800x800">
                             <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/quote3.jpg" srcset="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/quote3.jpg 1x, <?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/g-quote3.jpg 2x" alt="">
                         </a>
                     </div>
 
                     <div class="item-folio__text">
                         <h3 class="item-folio__title">
-                            Jesus Commanded More
+                            The Need to Learn More
                         </h3>
                         <p class="item-folio__cat">
-                            Vision
+                            A mathematical lifestyle
                         </p>
                     </div>
 
@@ -962,7 +949,7 @@ $content = get_option('landing_content');
                     </a>
 
                     <span class="item-folio__caption">
-                            <p>Jesus commanded much more.</p>
+                            <p>Reach for the stars.</p>
                         </span>
 
                 </div> <!-- end item-folio -->
@@ -975,7 +962,7 @@ $content = get_option('landing_content');
 
         <div class="row">
             <div class="col-full testimonials-header">
-                <h2 class="h1">What Prayer Warriors Are Saying</h2>
+                <h2 class="h1">What Our Students Are Saying</h2>
             </div>
         </div>
 
@@ -985,28 +972,28 @@ $content = get_option('landing_content');
 
                 <div class="testimonials__slide">
                     <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>If we never pray for movement in <?php echo esc_html( $content['location'] ?? '' ) ?>, do we have the right to complain when it isn't happening?</p>
+                    <p>I thought I wasn't smart enough to study math, until I learned about <?php echo esc_html( $content['title'] ?? 'this class' ) ?></p>
                     <div class="testimonials__author">
-                        Dave ~
-                        <span>Pastor</span>
+                        Hakim ~
+                        <span>Student</span>
                     </div>
                 </div> <!-- end testimonials__slide -->
 
                 <div class="testimonials__slide">
                     <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>The American church needs to catch up with the prayer commitment, passion, and priority of the church in Asia and Africa.</p>
+                    <p>You can also learn math in <?php echo esc_html( $content['location'] ?? 'your city' ) ?>! This class helped me find a good job and get things in order.</p>
                     <div class="testimonials__author">
-                        Chris ~
-                        <span>Worker, North America</span>
+                        Jamal ~
+                        <span>Worker</span>
                     </div>
                 </div> <!-- end testimonials__slide -->
 
                 <div class="testimonials__slide">
-                    <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/keller.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>The primary means of revival, that everyone agrees on, is extra-ordinary prayer.</p>
+                    <img src="<?php echo trailingslashit( plugin_dir_url(__FILE__) ) ?>images/user-03.jpg" alt="Author image" class="testimonials__avatar">
+                    <p>Advanced mathematical concepts were finally easy for me to understand, and even more, I was applying them to my every day life!</p>
                     <div class="testimonials__author">
-                        Tim Keller
-                        <span>Pastor</span>
+                        Ahmed ~
+                        <span>Student</span>
                     </div>
                 </div> <!-- end testimonials__slide -->
 
@@ -1028,7 +1015,7 @@ $content = get_option('landing_content');
     <div class="row">
         <div class="col-full cl-copyright">
                 <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://zume.community" target="_blank" rel="noopener noreferrer">Zúme.Community</a>
+Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $content['title'] ?? '' ) ?></a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
         </div>
     </div>
